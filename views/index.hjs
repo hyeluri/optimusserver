@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=500, initial-scale=1">
+    <title>{{ title }}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <div>
+      <h1>Welcome to the Optimus</h1>
+    </div>
+    <section class="center">
+      <form method="post" action="/search">
+        <input type="text" name="searchInput" class="commandBox" placeholder="">
+        <input type="submit" value="Submit">
+      </form>
+      <div class="results">
+
+      </div>
+    </section>
+  </body>
+</html>
