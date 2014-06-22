@@ -8,33 +8,26 @@ var CATEGORY_IDS = {
   'personal': 285228
 };
 
-var freshToDeath = new Freshbooks(API_URL, API_TOKEN);
+var freshbooks = new Freshbooks(API_URL, API_TOKEN);
+var expenseClient = new freshbooks.Expense();
 
-var expenseClient = new freshToDeath.Expense();
-var expenseMethods = {
-  /**
-   * Show me dat money
-   */
-  list: function (options) {
-    options = options || {};
+var expenseManager = {};
+expenseManager.list = function (options) {
+  options = options || {};
 
-    var listExpenseAsync = Promise.promisify(expenseClient.list.bind(expenseClient));
-    return listExpenseAsync(options);
-  },
+  var listExpenseAsync = Promise.promisify(expenseClient.list.bind(expenseClient));
+  return listExpenseAsync(options);
+};
 
-  /**
-   * Spend dat money
-   */
-  create: function (data) {
-    data.staff_id    = data.staff_id    || 1;
-    data.category_id = data.category_id || CATEGORY_IDS.personal;
+expenseManager.create = function (data) {
+  data.staff_id    = data.staff_id    || 1;
+  data.category_id = data.category_id || CATEGORY_IDS.personal;
 
-    var createExpenseAsync = Promise.promisify(expenseClient.create.bind(expenseClient));
+  var createExpenseAsync = Promise.promisify(expenseClient.create.bind(expenseClient));
 
-    return createExpenseAsync(data);
-  }
+  return createExpenseAsync(data);
 };
 
 module.exports = {
-  expense: expenseMethods
+  expense: expenseManager
 };
