@@ -44,6 +44,7 @@ TaskManager.createTaskByListId = function(listId, taskName){
 };
 //Creates a task on given listName
 TaskManager.createTaskByListName = function(listName, taskName){
+  console.log("trello",listName,taskName);
   return TaskManager.openLists()
   .then(function(lists){
     var foundListId;
