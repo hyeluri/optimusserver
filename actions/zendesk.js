@@ -25,10 +25,10 @@ ServiceManager.openTickets = function(){
 };
 //returns array of open ticket objects older than given date
 ServiceManager.openTicketsOlderThanXDays = function(days){
-  var date = moment().format('YYYY-mm-dd');
+  var date = moment().subtract('days', days).format('YYYY-MM-DD');
   console.log("DATE:", date);
   return new Promise(function(resolve){
-    client.search.queryAll("status<solved+created<"+date, function (err, req, result) {
+    client.search.query("status<solved created<"+date, function (err, req, result) {
       if (err) {
         console.log(err);
         return;
@@ -38,8 +38,8 @@ ServiceManager.openTicketsOlderThanXDays = function(days){
   });
 };
 
-ServiceManager.openTicketsOlderThanXDays(0)
-.then(function(data){
-  console.log(data);
-});
+// ServiceManager.openTicketsOlderThanXDays(1)
+// .then(function(data){
+//   console.log(data);
+// });
 module.exports = ServiceManager;
