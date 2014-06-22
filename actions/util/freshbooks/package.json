@@ -1,0 +1,41 @@
+{
+  "name": "freshbooks",
+  "description": "Node.js wrapper for FreshBooks (www.freshbooks.com) API",
+  "version": "0.2.1",
+  "author": {
+    "name": "Marc Loney",
+    "email": "<marc@metacrash.com.au"
+  },
+  "homepage": "https://github.com/Metacrash/freshbooks.js",
+  "dependencies": {
+    "libxmljs": "0.8.1"
+  },
+  "main": "index",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "0.3.x"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "publishConfig": {
+    "tag": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Metacrash/freshbooks.js.git#v0.2.1"
+  },
+  "readme": "#Freshbooks.js\n\nFreshbooks.js is a node.js module providing a wrapper to the [FreshBooks]\n(http://www.freshbooks.com) API.\n\nAll API method are fairly well documented at [FreshBooks Developers]\n(http://developers.freshbooks.com) but if you find a discrepancy between the \ndocs and this wrapper feel free to file an \"Issue\".\n\n## Installation\n\n    $ npm install freshbooks\n        \nNote: This module utilises [libxmljs](https://github.com/polotek/libxmljs). You \nwill need have the **libxml2** library installed and also the **libxml2-devel** \n(**libxml2-dev** on debian systems) package. This comes with the `xml2-config`\nutility that is needed for compiling.  **This command must be in your path.**\n\n## Example\n\n    var FreshBooks = require(\"freshbooks\");\n    \n    var freshbooks = new FreshBooks(api_url, api_token)\n      , invoice = new freshbooks.Invoice();\n\n    invoice.get(invoice_id, function(err, invoice) {\n      if(err) { //returns if an error has occured, ie invoice_id doesn't exist.\n        console.log(err);\n      } else {\n        console.log(\"Invoice Number:\" + invoice.number);\n      }\n    });\n\n## Changelog\n\n\n**Update 24/08/2013:** Bumped the version to 0.2.1. Fixed a bug preventing invoice lines from being created/updated. Updated libxmljs to 0.8.1. Fixed Projects and Category tests from failing.\n\n**Update 17/10/2012:** ...and version 0.2.0 has landed! We are now using the latest\nversion of libxmljs (currently version 0.6.1). We have also added an \"options\" \nobject to contain invoice_id, subject and message to \n[Estimate,Invoice].sendByEmail, allowing for custom email messages.\n\n**Update 18/08/2012:** Version 0.1.2 has just been pushed. There is now an \"options\" \nobject containing page, per_page, pages and total accessible from list methods.\n\n**Update 14/07/2012:** Just entered version 0.1.1! Most methods now accept an optional\nid first argument (similar to how invoice.get() works). Examples have been \nupdated *and* all tests are passing.\n\n**Update 08/07/2012:** We've just entered version 0.1.0! All required API features are \nnow implemented excluding callback and system.\n\n**Update 05/06/2012:** I've implimented about 75% of the API. Most of the core features \nare working but i'm still working through some minor issues. Tests are working \nnow though!\n\n**Update 04/06/2012:** This project is very much a *WORK IN PROGRESS*. So far I've \nimplimented the majority of the Invoice API and am tidying up the code before \nlaunching into the other APIs. I've also decided\nto take some liberties on some aspects of the API, ie replacing \ninvoice.lines.add/delete/update methods with Array.pop/push, as frankly there \nare better ways to interact with the API in JS than is currently implimented.\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2013 Marc Loney &lt;marc@metacrash.com.au&gt;\n\nPermission is hereby granted, free of charge, to any person obtaininga copy of \nthis software and associated documentation files (the 'Software'), to deal in \nthe Software without restriction, including without limitation the rights to \nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of \nthe Software, and to permit persons to whom the Software is furnished to do so, \nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all \ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR \nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS \nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR \nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER \nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN \nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Metacrash/freshbooks.js.git#v0.2.1/issues"
+  },
+  "_id": "freshbooks@0.2.1",
+  "dist": {
+    "shasum": "a91cc349b3669c45a22825aca8bcea117d0877b4"
+  },
+  "_from": "freshbooks@",
+  "_resolved": "https://registry.npmjs.org/freshbooks/-/freshbooks-0.2.1.tgz"
+}
