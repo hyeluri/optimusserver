@@ -39,6 +39,8 @@ app.use(passport.session());
 app.get('/', routes);
 
 require('./routes/freshbooks')(app);
+require('./routes/zendesk')(app);
+
 
 // app.get('/login', login);
 // app.post('/login', login);
