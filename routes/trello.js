@@ -23,7 +23,7 @@ module.exports = function (app) {
     .then(function (task) {
       var resData = {
         data: {list:req.body.listName, task:req.body.taskName},
-        text: 'I\'ve recorded your task. Here it is for the record.'
+        text: 'I\'ve recorded your task. '
       };
       res.send(200, resData);
     })

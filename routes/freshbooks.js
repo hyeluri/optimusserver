@@ -9,7 +9,7 @@ module.exports = function (app) {
     .then(function (expenses) {
       var resData = {
         data: expenses[0],
-        text: 'Here are your recent expenses.'
+        text: 'Here is the trend of your expenses over time'
       };
       res.send(200, resData);
     })
@@ -24,7 +24,7 @@ module.exports = function (app) {
     .then(function (expense) {
       var resData = {
         data: expense,
-        text: 'I\'ve recorded your expense. Here it is for the record.'
+        text: 'I\'ve recorded your expense.'
       };
       res.send(200, resData);
     })
