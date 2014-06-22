@@ -5,8 +5,6 @@ module.exports = function (app) {
   app.route('/expenses')
 
   .get(function (req, res) {
-    console.log("req",req);
-
     freshbooks.expense.list()
     .then(function (expenses) {
       var resData = {
@@ -22,8 +20,7 @@ module.exports = function (app) {
   })
 
   .post(function (req, res) {
-
-    freshbooks.expense.create(req.body)
+    freshbooks.expense.create(req.body.amount, req.body.notes)
     .then(function (expense) {
       var resData = {
         data: expense,
