@@ -5,6 +5,7 @@ module.exports = function (app) {
   app.route('/expenses')
 
   .get(function (req, res) {
+    console.log("req",req);
 
     freshbooks.expense.list()
     .then(function (expenses) {

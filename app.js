@@ -4,7 +4,6 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var twitterService = require('./actions/twitter');
 var multer = require('multer');
-var trello = require("./actions/trello");
 
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;
@@ -23,6 +22,8 @@ var routes = require('./routes/index');
 var app = express();
 
 app.set('port', process.env.PORT || 3000);
+app.set('view engine', 'hjs');
+
 app.use(multer({dest: './uploads/'}));
 
 app.use(logger('dev'));
@@ -34,6 +35,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/', routes);
+
+require('./routes/freshbooks')(app);
+
 // app.get('/login', login);
 // app.post('/login', login);
 // app.get('/sms', sms);
@@ -215,10 +219,10 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
     res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
-    });
+  //   res.render('error', {
+  //     message: err.message,
+  //     error: err
+  //   });
   });
 }
 
@@ -226,10 +230,10 @@ if (app.get('env') === 'development') {
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+  // res.render('error', {
+  //   message: err.message,
+  //   error: {}
+  // });
 });
 
 var server = app.listen(app.get('port'), function() {
