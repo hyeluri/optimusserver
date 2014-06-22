@@ -4,6 +4,8 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var twitterService = require('./actions/twitter');
 var multer = require('multer');
+var zendesk = require('./actions/zendesk');
+
 
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;

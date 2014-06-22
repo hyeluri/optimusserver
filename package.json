@@ -12,16 +12,18 @@
     "evernote": "^1.25.3",
     "express": "~4.2.0",
     "express-session": "^1.2.1",
+    "libxmljs": "^0.10.0",
+    "moment": "^2.7.0",
     "morgan": "~1.0.0",
     "multer": "0.0.7",
     "node-trello": "^0.1.5",
+    "node-zendesk": "0.0.14",
     "passport": "^0.2.0",
     "passport-evernote": "^0.1.1",
     "passport-twitter": "^1.0.2",
     "request": "^2.36.0",
     "twit": "^1.1.15",
     "underscore": "^1.6.0",
-    "xml2js": "^0.4.4",
-    "libxmljs": "^0.10.0"
+    "xml2js": "^0.4.4"
   }
 }
