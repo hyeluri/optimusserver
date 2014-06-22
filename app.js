@@ -4,6 +4,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var twitterService = require('./actions/twitter');
 var multer = require('multer');
+var trello = require("./actions/trello");
 
 var passport = require('passport');
 var TwitterStrategy = require('passport-twitter').Strategy;

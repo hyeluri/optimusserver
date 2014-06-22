@@ -9,16 +9,18 @@
     "bluebird": "^1.2.4",
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
+    "evernote": "^1.25.3",
     "express": "~4.2.0",
     "express-session": "^1.2.1",
     "morgan": "~1.0.0",
+    "multer": "0.0.7",
+    "node-trello": "^0.1.5",
     "passport": "^0.2.0",
+    "passport-evernote": "^0.1.1",
     "passport-twitter": "^1.0.2",
     "request": "^2.36.0",
     "twit": "^1.1.15",
-    "xml2js": "^0.4.4",
-    "passport-evernote": "^0.1.1",
-    "evernote": "^1.25.3",
-    "multer": "0.0.7"
+    "underscore": "^1.6.0",
+    "xml2js": "^0.4.4"
   }
 }
